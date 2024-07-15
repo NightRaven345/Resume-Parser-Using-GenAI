@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Stored Data</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Stored Resume Data</h1>
+      <table>
+        <tr>
+          <th>Index</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Actions</th>
+        </tr>
+        {% for data in all_data %}
+        <tr>
+          <td>{{ data.id }}</td>
+          <td>{{ data.name }}</td>
+          <td>{{ data.email }}</td>
+          <td>{{ data.phone }}</td>
+          <td>
+            <a href="{{ url_for('details', id=data.id) }}" class="btn"
+              >View Details</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+      <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+    </div>
+  </body>
+</html>

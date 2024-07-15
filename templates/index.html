@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Extractor</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="{{ url_for('static', filename='img/image.jpg') }}"
+        alt="Animated Image"
+        class="animated-image"
+      />
+      <h1>Welcome to Resume Extractor</h1>
+      <p>
+        Upload your resume (PDF, DOCX, TXT) and extract the basic information.
+      </p>
+      <a href="{{ url_for('upload') }}" class="btn">Upload Resume</a>
+      <a href="{{ url_for('view_data') }}" class="btn">View Stored Data</a>
+    </div>
+  </body>
+</html>

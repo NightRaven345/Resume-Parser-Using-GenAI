@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Details</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Full Details</h1>
+      <div class="container3">
+        <table>
+          <tr>
+            <th>Name</th>
+            <td>{{ details.name }}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{ details.email }}</td>
+          </tr>
+          <tr>
+            <th>Contact</th>
+            <td>{{ details.phone }}</td>
+          </tr>
+          <tr>
+            <th>IT Skills</th>
+            <td>{{ details.it_skills }}</td>
+          </tr>
+          <tr>
+            <th>Programming Languages</th>
+            <td>{{ details.programming }}</td>
+          </tr>
+          <tr>
+            <th>Front End Technologies</th>
+            <td>{{ details.front_end }}</td>
+          </tr>
+          <tr>
+            <th>Back End Technologies</th>
+            <td>{{ details.back_end }}</td>
+          </tr>
+          <tr>
+            <th>Database Technologies</th>
+            <td>{{ details.database }}</td>
+          </tr>
+          <tr>
+            <th>AI/ML Technologies</th>
+            <td>{{ details.ai_ml }}</td>
+          </tr>
+          <tr>
+            <th>Other Skills</th>
+            <td>{{ details.other_skills }}</td>
+          </tr>
+          <tr>
+            <th>Work Experience</th>
+            <td>
+              <ul>
+                {% for experience in details.experience.split('\n') %}
+                <li>{{ experience }}</li>
+                {% endfor %}
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <a href="{{ url_for('result') }}" class="btn">Back to Results</a>
+    </div>
+  </body>
+</html>
